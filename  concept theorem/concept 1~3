@@ -1,0 +1,224 @@
+JAVA 공부
+
+- [ ] 클래스 블록
+public class 클래스명 {
+
+    /* 메서드 블록 */
+    [public|private|protected] [static] (리턴자료형|void) 메서드명1(입력자료형 매개변수, ...) {
+        명령문(statement);
+        ...
+    }
+
+    /* 메서드 블록 */
+    [public|private|protected] [static] (리턴자료형|void) 메서드명2(입력자료형 매개변수, ...) {
+        명령문(statement);
+        ...
+    }
+
+    ...
+}
+
+- [ ] 클래스 블록 설명 
+[public|private|protected]  = 메서드의 접근 제어자 올수도 있고 안올수도 있다.
+[static] = static 이 붙으면 static메서드가 됨
+(리턴자료형|void)= 메서드가 실행된 후 리턴되는 값의 자료형, 리턴값이 있을경우 반드시 표기 
+			      없으면 void
+
+- [ ] 변수와 자료명
+	변수명은 숫자로 시작할 수 없다 	_나$문자 이외의 특수문자는 사용할 수 없다.
+	자바의 키워드는 변수명으로 사용할 수 없다(int,class,return)
+
+- [ ] 자료형
+	변수명 앞의 int,String등은 자료형이다.
+	사용자 정의 자료형을 생성할 수 있다.
+
+- [ ] 주석
+	블록주석 /* 내용 */
+	라인주석 // 내용
+
+- [ ] 자료형
+이름	크기
+Int (정수)	4byte
+long(정수)	8byte
+float(실수)	4byte
+double(실수)	8byte
+- [ ] 문자열
+	문자들로 구성된 문장
+	String 변수명으로 생성
+	
+	String a = “Happy Java”
+	String a = new String(“Happy Java”);
+	원시 자료형은 new 키워드로 생성 못함
+	literal로만 값을 세팅할 수 있다.
+	
+- [ ] 문자열 내장 메서드
+	equal
+	a.equal(b)
+	bool로 리턴
+
+	indexOf
+	a.indexOf(“b”);
+	b가 시작되는 위치 리턴
+
+	contains
+	a.contains(“b”);
+	bool로 리턴
+
+	replaceAll
+	a.replaceAll(“a”,”b”);
+	a를 b로 교체
+
+	substring
+	a.substring(0,4);
+	0번째에서4번째까지 출력
+
+	toUpperCase
+	a.toUpperCase();
+	대문자로 변환
+
+	split
+	a.split(“:”);
+	: 기준으로 변환
+
+- [ ] 문자열 포맷팅
+
+	1 숫자 바로 대입
+	String.format(“%d”,3);
+
+	2문자열 바로 대입
+	String.format(“%s”,”five”);
+
+	3.숫자값을 나타내는 변수로  대입
+	String.format(“$d”,number);
+
+	4.2개 이상의 값 넣기
+	String.format(“%d %d”,number1,number2);
+
+- [ ] 문자열 포맷 코드
+	%10s 10개 띄어놓고 문자열 출력
+	%-10s 10개 반대로 띄어놓고 문자열 출력
+	%.4f 4개까지 소수점 표현
+
+- [ ] System.out.printf 를 사용하면 포매팅 따로 필요없음
+
+- [ ] StringBuffer 
+
+	1.append
+	sb.append(“a”) ;
+	비슷하게 +=연산자로 더할 수 있으나.
+	append는 객체가 한번만 생성됨
+	+= 할때마다 String 객체가 생성
+	 	2. insert
+	특정원하는 위치에 문자열 삽입 가능
+	a.insert(0,”hello”);
+	
+	3.substirng
+	a.substring(0,4);
+	동일하게 사용
+
+	
+- [ ] Array
+
+	자료형의 집합
+	배열은 int string char등으로 다양하게 선언 가능
+	int[] arr char[] arr
+	배열의 길이는 생성할 때 고정되어 있음
+	배열의 값은 인덱싱으로 접근
+	배열의 길이는 
+	arr.length로 구할 수 있다.
+
+- [ ] List
+	
+	ArrayList 변수명으로 생성
+	ArrayList al = new ArrayList();
+	java.util.ArrayList 를 import 해야함
+	
+	1. Add
+	al.add(0,”133”);
+	으로 원하는 위치에 삽입
+	
+	2.get
+	al.get(1);
+	1번째 인덱스 값을 추출
+
+	3.size
+	al.size();
+	list의 사이즈를 리턴
+	
+	4.contains
+	해당항목이 있는지 판별하여 boolean으로 리턴
+	al.contains(“123”);
+
+	5.remove
+	remove에는 두가지 방법이 있음
+	remove(객체);
+	remove(인덱스)
+	
+- [ ] Map
+
+	HashMap<자료형,자료형> map = new HashMap<>();
+	으로 생성 가능함
+	
+	1.get
+	map.get(key);
+	value리턴
+
+	2.containsKey
+	map.containsKey(key);
+	해당키가 있는지 조사후 boolean리턴
+
+	3.size 
+	map.size();
+	사이즈를 리턴
+
+	4.keySet
+	map.keySet();
+	모든 키를 모아서 Set으로 리턴
+
+- [ ] Set(집합)
+	
+	HashSet을 사용하여 만들 수 있다.
+	
+	HashSet<자료형> set = new HashSet<>(Arrays.asList(“H”,”		e”,”l”,”l”,”o”));
+
+	중복을 허용하지 않고
+	순서가 없는게 특징
+	
+	1.교집합 합집합 구하기
+	
+	2개의 집합을 사용해 교집합 합집합을 구할 수 있다
+	a.retianAll(b) //교집합 수행
+	b.addAll(a) //합집합 수행
+	a.removeAll(b) //차집합 수행
+
+	2.값 추가하기
+	a.add(b);
+
+	3.값 여러개 추가하기
+	a.addAll(b,c);
+	
+	4.특정 값 제거하기 
+	a.remove(b);
+
+- [ ] Enum(상수집합)
+	
+	Enum 이름{
+		a,
+		b,
+		c
+	}
+	
+- [ ] 형변환과 final
+	
+	1.문자열을 int로
+	Integer.parseInt(num);
+	
+	2.int를 문자열로
+	정수앞에 빈문자열 더하기
+	“”+정수
+
+	final을 하면 값을 바꿀 수 없다(형변환 포함)
+
+
+
+
